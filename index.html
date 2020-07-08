@@ -1,24 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="light" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"> 
+    <title>Random Trees</title>
 </head>
 <body>
-
+    
     <header class="header">
-        Header
+        <div class="header__logo">Random Trees</div>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__list-item">Test nav item</li>
+            </ul>
+        </nav>
     </header>
-
+    
     <main class="main">
-        Main
-    </main>
+        <section class="sections">
 
+            <article class="article">
+                <figure>
+                    <img src="./img/ash.jpg" alt="#">
+                </figure>
+                <div class="article__text-wrapper">
+                    <h2 class="article__title">Title</h2>
+                    <p class="article__sci-name"> Larix decidua</p>
+                    <div class="truncate">
+                        <p class="article__content"> This is a genus of about 30 species of trees native throughout most of the temperate Northern Hemisphere, in Asia (where the greatest species diversity is found) and Europe. The large leafed linden and the small leafed linden are found in all European forests up to the far north. The small leafed linden is a big tree reaching a height of 24-30 m (80 to 100 feet). In summer it has a vast number of aromatic flowers. The linden bears fruit in about its 20th year and then maintains an abundant annual output. The linden does well in all firm soils particularly damp or wet lime stone. The wood of this tree is white or slightly pink; it is homogenous, fine, light and soft. Since it is very easy to work with it is in much demand for carpentry, cabinet making and sculpture. The sound board and mechanism of the piano can also be made from this wood, as can ladders, pencils, matches and wood pulp for the manufacture of paper.</p>
+                    </div>
+                    <button class="btn article__more article__more--open">Open</button>
+                </div>
+            </article>
+
+        </section>
+        
+    </main>
+    
     <footer class="footer">
-        Footer
+        <a href="https://www.earthorganization.org/europe/" target="_blank">See the data here</a> <br>
+        <a href="https://codepen.io/chriscoyier/pen/gvFGI" target="_blank">Text overflow Codepen</a>
+        Footer <br>
+        <div class="theming-btns">
+            <button class="theming-btn theming-btn--light" id="light-button">Light mode</button>
+            <button class="theming-btn theming-btn--dark" id="dark-button">Dark mode</button>
+        </div>
     </footer>
 </body>
+
+<script type="module">
+    import postsData from "./js/data.js";
+</script>
 <script src="./js/app.js"></script>
 </html>
