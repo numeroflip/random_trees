@@ -1,0 +1,50 @@
+:root * {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Fonts */
+
+html {
+    line-height: var(--lh);
+}
+
+body {
+    font-family: var(--font-text);
+    margin: 0 auto;
+    padding: 0;
+    color: var(--font-gen-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-header);
+    color: var(--font-header-color);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+
+    &__logo {
+        font-size: 1.3rem;
+    }
+
+    .nav {
+
+        &__list {
+
+            &-item {
+
+            }
+        }
+
+    }
+}

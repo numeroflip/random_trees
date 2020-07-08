@@ -1,0 +1,23 @@
+html[data-theme="light"] {
+    --main-bg-color: rgb(242, 255, 239);
+    --focus-bg-color: rgb(255, 255, 255);
+    --font-gen-color: rgb(14, 14, 14);
+    --font-header-color: rgb(0, 88, 15);
+}
+
+html[data-theme="dark"] {
+    --main-bg-color: rgb(32, 32, 32);
+    --focus-bg-color: rgb(59, 59, 59);
+    --font-gen-color: rgb(214, 214, 214);
+    --font-header-color: rgb(0, 179, 30);
+}
+
+:root {
+    --font-text: 'Lato', sans-serif;
+    --font-header: 'Oswald', sans-serif;
+}
+
+
+html {
+    --lh: 1.4rem;
+}
