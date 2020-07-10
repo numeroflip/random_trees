@@ -1,15 +1,23 @@
+/* LIGHT MODE */
 html[data-theme="light"] {
-    --main-bg-color: rgb(242, 255, 239);
+    --main-bg-color: rgb(244, 253, 242);
     --focus-bg-color: rgb(255, 255, 255);
     --font-gen-color: rgb(14, 14, 14);
     --font-header-color: rgb(0, 88, 15);
+    --img-border: none;
+    --primary-color: rgb(0, 145, 24);
+    --negative-color: white;
 }
-
+/* DARK MODE */
 html[data-theme="dark"] {
     --main-bg-color: rgb(32, 32, 32);
     --focus-bg-color: rgb(59, 59, 59);
     --font-gen-color: rgb(214, 214, 214);
     --font-header-color: rgb(0, 179, 30);
+    --img-border: 1px solid white;
+    --primary-color: rgb(0, 88, 15);
+    --negative-color: white;
+
 }
 
 :root {

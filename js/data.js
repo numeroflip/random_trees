@@ -19,7 +19,7 @@ const post1 = new Post(
 
     Larch grows naturally in the mountains and forms large forests. It provides medicine and a variety of turpentine that flows through cracks in the trunk. This is a valuable species which is unfortunately inadequately distributed. It grows in all soil with some preference for moist deep scree. Its wood has a hard reddish core, is flexible and rich in resin.`,
 
-    '../img/larch.jpg'
+    './img/larch.jpg'
 )
 
 const post2 = new Post (
@@ -32,7 +32,7 @@ const post2 = new Post (
 
     Spruce forest can be found covering large areas of Europe. They grow at higher altitudes. Spruce grows in any kind of soil provided the soil is cool and damp, even wet. Spruce roots are neither deep nor solidly anchored; they are therefore liable to blow over in strong winds. Spruce can be trimmed into nice hedges. The fact that the bark peels easily is a useful feature which enables it to be used for tanning; it helps protect and can prolong the life of the tree by ridding it of many dangerous insect pests. Spruce is used for paper manufacture, Christmas trees, musical instruments and resin.
     `,
-    '../img/spruce.jpg'
+    './img/spruce.jpg'
 )
 
 const post3 = new Post (
@@ -45,7 +45,7 @@ const post3 = new Post (
 
     This tree forms huge forests in Europe and Northern Asia. It is most common in northern temperate terrain. Pine buds provide the base for various traditional remedies against chronic bronchial problems. Their use in the treatment of scurvy and their diuretic properties are also well known; the principle active ingredient being the turpentine in the scales.
     `,
-    '../img/pine.jpg'
+    './img/pine.jpg'
 );
 
 const post4 = new Post (
@@ -60,7 +60,7 @@ const post4 = new Post (
 
     The hornbeam grows in Europe in cool, slightly damp forests. It is also used in gardens and parks to form a hedgerow. At age 22 the Hornbeam produces fertile seeds and will produce ripe fruit every year after that. Hornbeam wood is delicate and has a very poor resistance to water. As a result it cannot be used for construction but can be used for fire wood.
     `,
-    '../img/hornbeam.jpg'
+    './img/hornbeam.jpg'
 );
 
 const post5 = new Post (
@@ -75,7 +75,7 @@ const post5 = new Post (
 
     The European Beech starts to flower when it is between 30-80 years old. The flowers are small catkins which appear shortly after the leaves in spring. The seeds, called beechnuts, are small triangular nuts; there are two nuts in each cupule. Flower and seed production is particularly abundant in years following a hot, sunny and dry summer, though rarely for two years in a row. The nuts are an important food for birds, rodents and in the past also people, although they are no longer eaten by man. Slightly toxic to man if eaten in large quantities due to the tannins they contain, the nuts were nonetheless pressed to obtain oil in 19th century England that was used for cooking and in lamps. They were also ground to make flour, which could be eaten after the tannins were leached out by soaking.
     `,
-    '../img/fagus.jpg'
+    './img/beech.jpg'
 );
 
 const post6 = new Post (
@@ -88,7 +88,7 @@ const post6 = new Post (
 
     The ash grows near water in mountain ravines and on highland plateaus. It is native and abundant where the soil is deep and moist as in northern limestone areas. This tree reaches and even surpasses a height of a 30 m (100 feet) and a girth of 3 m (10 feet) at an age of 80 years.
     `,
-    '../img/ash.jpg'
+    './img/ash.jpg'
 );
 
 const post7 = new Post (
@@ -103,7 +103,7 @@ const post7 = new Post (
 
     The leaves of this shrubby evergreen tree are a dark green with a shiny upper surface. It is usually found in woods and forests and in hilly country throughout Western Europe. Its wood which is very hard is particularly used for the manufacture of tool handles; its bark is used to make glue; its berries when ripe are thought to be laxative and the leaves have anti-inflammatory properties. Due to its splendid colour the holly is a very ornamental tree. It fares poorly when transplanted but does grow well when cut back. It could be used to form a very solid hedge although its growth is somewhat slow.
     `,
-    '../img/holly.jpg'
+    './img/holly.jpg'
 );
 
 const post8 = new Post (
@@ -116,7 +116,7 @@ const post8 = new Post (
 
     The flowers appear in early spring before the leaves. They are mainly very fast growing trees reaching large sizes with angular branches. A black poplar is common through most of Europe and in the temperate regions of Asia. The poplar originated in the Polar Regions and then spread south.
     `,
-    '../img/poplar.jpg'
+    './img/poplar.jpg'
 );
 
 const post9= new Post (
@@ -139,7 +139,7 @@ const post9= new Post (
 
     In 1897 Felix Hoffmann created a synthetically altered version of salicin (in his case derived from the Spiraea plant), which caused less digestive upset than pure salicylic acid. The new drug formally Acetylsalicylic acid, was named aspirin by Hoffmann’s employer Bayer AG. This gave rise to the hugely important class of drugs known as non-steroidal anti-inflammatory drugs.
     `,
-    '../img/willow.jpg'
+    './img/willow.jpg'
 );
 
 const post10= new Post (
@@ -152,7 +152,7 @@ const post10= new Post (
 
     The tree produces fragrant nectar-producing flowers and the medicinal herb lime blossom. They are very important honey plants for beekeepers, producing a very pale but richly flavored honey. The flowers are also used for herbal tea, and this infusion: tannin, malic acid and tartaric acid and are perfumed by an essential oil. This is used in treating restlessness, hysteria, and headaches. This infusion is popular in Europe. Usually, the double-flowered lindens are used to make perfumes.
     `,
-    '../img/linden.jpg'
+    './img/linden.jpg'
 );
 
 const post11= new Post (
@@ -163,11 +163,9 @@ const post11= new Post (
 
     The term Random forest, or random decision forest is the name of a learning method in machine learning. -Whaaaat?! Wait, wait, don't be scared, it is in a sense just a special combination of decision trees (Or should I say trunks? :) )... -WHAAAAAT?! ... Okay, calm down, I have to admit it isn't the easiest topics of all... It is a supervised learning method for computers to analyze "old" data, and make future predictins (classify) on "new" data. It can be, and IS really helpful in what it does, it even have an extremely kickass name, so what do you need more??? You got me, it isn't that interesting for you, I understand... But... If it is, then I still won't be able to describe the idea in plain English for you, but at least thanks for reading. :)    
     `,
-    '../img/ranforest.jpg'
+    './img/ranforest.jpg'
 );
 
 
 
 const postsData = [post1, post2, post3, post4, post5, post6, post7, post8, post9, post10, post11];
-
-export default postsData;

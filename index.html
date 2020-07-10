@@ -12,31 +12,31 @@
     
     <header class="header">
         <div class="header__logo">Random Trees</div>
-        <nav class="nav">
+        <nav class="nav" id="nav">
             <ul class="nav__list">
-                <li class="nav__list-item">Test nav item</li>
             </ul>
         </nav>
     </header>
     
     <main class="main">
         <section class="sections">
-
-            <article class="article">
-                <figure>
-                    <img src="./img/ash.jpg" alt="#">
+<!--             <article class="article" id="article-${}">
+                <figure class="article__figure">
+                    <img class="article__img" src=${data.imgUrl} alt=${data.title}>
                 </figure>
                 <div class="article__text-wrapper">
-                    <h2 class="article__title">Title</h2>
-                    <p class="article__sci-name"> Larix decidua</p>
+                    <h2 class="article__title">${data.title}</h2>
+                    <p class="article__sci-name">${data.sciName}</p>
                     <div class="truncate">
-                        <p class="article__content"> This is a genus of about 30 species of trees native throughout most of the temperate Northern Hemisphere, in Asia (where the greatest species diversity is found) and Europe. The large leafed linden and the small leafed linden are found in all European forests up to the far north. The small leafed linden is a big tree reaching a height of 24-30 m (80 to 100 feet). In summer it has a vast number of aromatic flowers. The linden bears fruit in about its 20th year and then maintains an abundant annual output. The linden does well in all firm soils particularly damp or wet lime stone. The wood of this tree is white or slightly pink; it is homogenous, fine, light and soft. Since it is very easy to work with it is in much demand for carpentry, cabinet making and sculpture. The sound board and mechanism of the piano can also be made from this wood, as can ladders, pencils, matches and wood pulp for the manufacture of paper.</p>
+                        <p class="article__content">${data.content.slice(0, 200) + "..."}</p>
                     </div>
                     <button class="btn article__more article__more--open">Open</button>
                 </div>
-            </article>
-
+            </article> -->
         </section>
+        <button class="btn sections__add-btn">+</button>
+        <a href="#nav"><button class="btn sections__move-top-btn">⋀</button></a>
+
         
     </main>
     
@@ -51,8 +51,6 @@
     </footer>
 </body>
 
-<script type="module">
-    import postsData from "./js/data.js";
-</script>
+<script src="./js/data.js"></script>
 <script src="./js/app.js"></script>
 </html>

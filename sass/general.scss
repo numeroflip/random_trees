@@ -6,6 +6,19 @@ a {
     text-decoration: none;
 }
 
+img {
+    display: block;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 /* Fonts */
 
 html {
@@ -15,8 +28,10 @@ html {
 body {
     font-family: var(--font-text);
     margin: 0 auto;
-    padding: 0;
+    padding: 0 1rem;
     color: var(--font-gen-color);
+    line-height: 1.6rem;
+
 }
 
 h1,
@@ -47,4 +62,23 @@ h6 {
         }
 
     }
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 10rem;
+    background-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    color: var(--negative-color);
+    text-align: center;
+    transition: all .3s;
+
+    &:focus,
+    &:active {
+        outline: none;
+        border: 0;
+    }
+
+    
 }
