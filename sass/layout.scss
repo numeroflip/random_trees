@@ -1,8 +1,15 @@
 body {
+    margin-top: 3rem;
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
     max-width: 1140px;
+}
+
+.header {
+    position: fixed;
+    background-color: #fff;
+    width: 100vw;
 }
 
 .main {

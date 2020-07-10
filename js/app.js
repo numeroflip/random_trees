@@ -7,16 +7,18 @@ const themeBtns = document.querySelector('.theming-btns');
 const addBtn = document.querySelector('.sections__add-btn');
 const navList = document.querySelector('.nav__list');
 
+const contLength = 200;
+
 let remainingArticles = [...postsData]
 while (remainingArticles.length < postsData.length) {
 remainingArticles.push(remainingArticles.length)
 };
 /* ------------------------------FUNCTIONS--------------------------- */
 /* Nav items */
-function insertNav(element, num) {
+function insertNav(element) {
     const navHtml = ` 
         <li class="nav__list-item">
-            <a href="#article-${num}">${element.title}</a>
+            <a href="#article-${element.id}">${element.title}</a>
         </li>
     `
     navList.insertAdjacentHTML('beforeend', navHtml);
@@ -24,17 +26,31 @@ function insertNav(element, num) {
 }
 /* Add a post to the main page from the predefined data array: postsData*/
 function addPost (num) {
-    const isClosed = true;
     const data = remainingArticles[num];
+    let paragraphs = data.content;
+    /* Trunc. 1st paragraph if longer than given length */
+    let truncatedPar = "";
+
+    if (paragraphs[0].length > 200) {
+            truncatedPar = paragraphs[0].slice(0,200) + "...";
+        } else {
+            truncatedPar = paragraphs[0] + "..."
+        }
+    
+        console.log("TRUNCATED: " + truncatedPar);
+        console.log("NORMAL: " + paragraphs[0]);
+    
+    paragraphs = paragraphs.join('</p><p class="article__content" >');
     const postHtml = `
-        <article data-post-id=${num} id="article-${num}" data-is-closed=${isClosed} class="article">
+        <article data-post-id=${data.id} id="article-${data.id}" data-is-closed="true" class="article">
             <figure class="article__figure">
                 <img class="article__img" src=${data.imgUrl} alt=${data.title}>
             </figure>
             <div class="article__text-wrapper">
                 <h2 class="article__title">${data.title}</h2>
                 <p class="article__sci-name">${data.sciName}</p>
-                <p class="article__content" data-open-state="closed">${data.content.slice(0, 200) + "..."}</p>
+                <p class="article__content--truncated>${truncatedPar}</p>
+                <p class="article__content >${paragraphs}</p>
                 <button class="btn article__more-btn article__more--open">Read More</button>
             </div>
         </article>
@@ -42,7 +58,7 @@ function addPost (num) {
     document.querySelector('.sections').insertAdjacentHTML('beforeend', postHtml);
     /* remove the inserted elements, from the array. -> no duplicates */
     remainingArticles.splice(num, 1);
-    insertNav(data, num);
+    insertNav(data);
 };
 /* Add a random post to the main page */
 function addRanPost() {
@@ -57,28 +73,31 @@ function init() {
     };
 };
 
-document.querySelector('.sections').addEventListener('click', (e) => {
-    if(e.target.classList.contains('article__more-btn')) {
-        const button = e.target;
-        const article = button.closest('.article');
-        const content = button.previousElementSibling;
-        const dataId = article.dataset.postId
-
-        if(article.dataset.isClosed == "true") {
-            button.textContent = "Close";
-            content.textContent = postsData[dataId].content;
-            article.dataset.isClosed = "false"
-        } else {
-            button.textContent = "Read More";
-            content.textContent = postsData[dataId].content.slice(0, 200) + '...';
-            article.dataset.isClosed = "true"
-        }
-    }; 
-})
 
 
 
 /* --------------------------EVENT LISTENERS------------------------ */
+/* "Show more/close" buttons for articles */
+document.querySelector('.sections').addEventListener('click', (e) => {
+    if(e.target.classList.contains('article__more-btn')) {
+        const button = e.target;
+        const article = button.closest('.article');
+        const content = document.querySelector(`#article-${article.dataset.postId} .article__content` )
+        const dataId = article.dataset.postId
+        console.log(content);
+
+        if(article.dataset.isClosed == "true") {
+            button.textContent = "Close";
+            article.dataset.isClosed = "false"
+            if (content.textContent.length > 200) {
+                content.textcontent = content.textContent.split(0,200) + '...'
+            }
+        } else {
+            button.textContent = "Read More";
+            article.dataset.isClosed = "true"
+        }
+    }; 
+})
 /*----------- Dark/Light theme controller ----------------*/
 themeBtns.addEventListener('click', (e) => {
     const target = e.target;

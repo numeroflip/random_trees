@@ -4,6 +4,11 @@
 
 a {
     text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
 }
 
 img {
@@ -27,8 +32,7 @@ html {
 
 body {
     font-family: var(--font-text);
-    margin: 0 auto;
-    padding: 0 1rem;
+    margin: 0 1rem;
     color: var(--font-gen-color);
     line-height: 1.6rem;
 
@@ -78,6 +82,14 @@ h6 {
     &:active {
         outline: none;
         border: 0;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+    &:active {
+        transform: scale(2);
+        background-color: transparent;
     }
 
     
