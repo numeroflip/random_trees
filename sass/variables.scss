@@ -16,16 +16,16 @@ html[data-theme="light"] {
 /* DARK MODE */
 html[data-theme="dark"] {
     --main-color: rgb(0, 0, 0);
-    --main-bg-color: rgb(27, 27, 27);
+    --main-bg-color: rgb(10, 10, 10);
     --grey-color: rgb(102, 102, 102);
     --border: 2px solid rgb(204, 204, 204);
-    --focus-bg-color: rgb(14, 14, 14);
+    --focus-bg-color: rgb(29, 29, 29);
     --font-gen-color: rgb(214, 214, 214);
     --font-header-color: rgb(109, 230, 129);
     --img-border: 2px solid rgba(255, 255, 255, 0.178);
     --primary-color: rgb(113, 230, 132);
-    --negative-color: white;
-    --box-shadow: 0 0 10px 1px rgba(235, 235, 235, 0.322);
+    --negative-color: rgb(216, 216, 216);
+    --box-shadow: 0 0 1px 1px rgba(235, 235, 235, 0.075);
 }
 
 :root {

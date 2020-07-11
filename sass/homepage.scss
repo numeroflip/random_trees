@@ -38,6 +38,11 @@ body {
                 font-weight: 700;
                 border-radius: 1rem;
             }
+
+            .focus {
+                background-color: var(--negative-color);
+                color: var(--main-color);
+            }
         }
     }
 }
