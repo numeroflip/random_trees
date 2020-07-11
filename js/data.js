@@ -165,7 +165,8 @@ const post11= new Post (
     
     ["Congratulations! What you see is the bonus section :) This forest is not a forest of real trees per se, but nonetheless interesting. :)",
 
-    `The term Random forest, or random decision forest is the name of a learning method in machine learning. -Whaaaat?! Wait, wait, don't be scared, it is in a sense just a special combination of decision trees (Or should I say trunks? :) )... -WHAAAAAT?! ... Okay, calm down, I have to admit it isn't the easiest topics of all... It is a supervised learning method for computers to analyze "old" data, and make future predictins (classify) on "new" data. It can be, and IS really helpful in what it does, it even have an extremely kickass name, so what do you need more??? You got me, it isn't that interesting for you, I understand... But... If it is, then I still won't be able to describe the idea in plain English for you, but at least thanks for reading.`]   
+    `The term Random forest, or random decision forest is the name of a learning method in machine learning. -Whaaaat?! Wait, wait, don't be scared, it is in a sense just a special combination of decision trees (Or should I say trunks? :) )... -WHAAAAAT?! ... Okay, calm down, I have to admit it isn't the easiest topics of all... It is a supervised learning method for computers to analyze "old" data, and make future predictins (classify) on "new" data. It can be, and IS really helpful in what it does, it even have an extremely kickass name, so what do you need more??? You got me, it isn't that interesting for you, I understand... But... If it is, then I still won't be able to describe the idea in plain English for you, but at least thanks for reading.`,
+    `Ps.: If you really are bored, and have too much time, check out <a href="https://www.youtube.com/watch?v=4EOCQJgqAOY">this</a> video. I promise you won't thank me later.`]   
     ,
     './img/ranforest.jpg',
     11

@@ -13,13 +13,6 @@ body {
     overflow: hidden;
     box-shadow: 1px 0 20px 1px rgba(68, 68, 68, 0.192);
 
-    &__logo {
-        margin-top: 1.3rem;
-        font-family: var(--font-header);
-        font-weight: 800;
-        text-align: center;
-    }
-
     .nav {
         min-height: 3rem;
         display: flex;
@@ -38,20 +31,38 @@ body {
             margin: .2rem .2rem;
 
             a {
+                text-decoration: none;
+                color: inherit;
                 transition: all .3s;
-                padding: .2rem 1rem;
+                padding: .4rem 1rem;
                 font-weight: 700;
+                border-radius: 1rem;
             }
         }
     }
 }
 
 
-/* A section */
+/* The section containing all the posts */
 
 .sections {
     padding: 0;
     margin: 0;
+
+    .logo {
+        display: block;
+        font-size: 2rem;
+        margin-top: 8rem;
+        font-family: var(--font-header);
+        font-weight: 800;
+        text-align: center;
+    }
+
+    .description {
+        margin: 2rem 1rem;
+        margin-bottom: 4rem;
+        text-align: center;
+    }
 
     .article {
         padding: 1rem;
@@ -62,7 +73,8 @@ body {
         border-radius: 1rem;
         margin: 1rem 0;
         margin-bottom: 5rem;
-        transition: all .3s;
+        transition: background-color .3s, box-shadow .3s;
+        // transition: all .3s;
 
         // The opening and closing "logic" of the content. When opened, show with display: block;
         &[data-is-closed="true"] {
@@ -88,12 +100,11 @@ body {
         // The image of the articles
         &__figure {
             width: 100%;
-    
             .article__img {
                 object-fit: cover;
                 height: 50vw;
                 width: 100%;
-                border: var(--img-border);
+                // border: var(--img-border);
                 border-radius: 1rem;
             }
         }
@@ -195,7 +206,39 @@ body {
     };  
 };
 
+@media (min-width: 800px) {
 
+    .sections {
+
+        .article {
+            min-height: 50vh;
+            padding: 3rem 1rem;
+            align-items: center;
+            flex-direction: row;
+
+            &__figure {
+                width: auto;
+                margin: 1rem 2rem;
+                margin-right: 4rem;
+
+                .article__img {
+                    width: 400px;
+                    height: 400px;
+                }            
+            }
+
+            &__text-wrapper {
+                margin-right: auto;
+                width: 100%;
+            }
+
+            &__more-btn {
+                margin-top: 4rem;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
 
 
 

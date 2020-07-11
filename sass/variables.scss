@@ -7,21 +7,25 @@ html[data-theme="light"] {
     --font-gen-color: rgb(14, 14, 14);
     --font-header-color: rgb(0, 88, 15);
     --img-border: none;
+    --border: 2px solid transparent;
     --primary-color: rgb(0, 145, 24);
     --negative-color: rgb(37, 37, 37);
+    --box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.13);
+
 }
 /* DARK MODE */
 html[data-theme="dark"] {
-    --main-color: rgb(32, 32, 32);
-    --main-bg-color: rgb(32, 32, 32);
+    --main-color: rgb(0, 0, 0);
+    --main-bg-color: rgb(27, 27, 27);
     --grey-color: rgb(102, 102, 102);
-    --focus-bg-color: rgb(59, 59, 59);
+    --border: 2px solid rgb(204, 204, 204);
+    --focus-bg-color: rgb(14, 14, 14);
     --font-gen-color: rgb(214, 214, 214);
-    --font-header-color: rgb(82, 209, 103);
-    --img-border: 1px solid white;
-    --primary-color: rgb(82, 209, 103);
+    --font-header-color: rgb(109, 230, 129);
+    --img-border: 2px solid rgba(255, 255, 255, 0.178);
+    --primary-color: rgb(113, 230, 132);
     --negative-color: white;
-
+    --box-shadow: 0 0 10px 1px rgba(235, 235, 235, 0.322);
 }
 
 :root {
