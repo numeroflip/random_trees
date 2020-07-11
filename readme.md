@@ -1,4 +1,5 @@
-# Random trees
+# Random trees 
+[Click here to see the page](https://numeroflip.github.io/u_landing_page/)
 ## What is it?
 Mainly a vanilla JavaScript excercise. There isn't much going on in the index.html file at the beginning. With some JS, there will be 4 random post about trees generated when the page loads. If you refresh the page you get different ones. At the end of the page, there is an "add more" button, if you click on it, there will be more content added.
 
@@ -18,7 +19,7 @@ To practice, I made the site from scratch with plain HTML and CSS. The more inte
 
 ## Random quote
 
-> Give a man a program, frustrate him for a day. Teach a man to program, frustrate him for a lifetime. 
+> Give a man a program, frustrate him for a day. Teach a man to program, frustrate him for a lifetime.  
 > <cite> -Waseem Latif </cite>
 ## Conclusion
 
