@@ -9,33 +9,44 @@
     <title>Random Trees</title>
 </head>
 <body>
-    
-    <header class="header">
-        <div class="header__logo">Random Trees</div>
-        <nav class="nav" id="nav">
-            <ul class="nav__list">
-            </ul>
-        </nav>
-    </header>
-    
-    <main class="main">
-        <section class="sections">
-        </section>
-        <button class="btn sections__add-btn">+</button>
-        <a href="#nav"><button class="btn sections__move-top-btn">⋀</button></a>
+    <div class="root">
 
+        <header class="header">
+            <!-- <div class="header__logo">Random Trees</div> -->
+            <nav class="nav" id="navigation">
+                <ul class="nav__list">
+                </ul>
+            </nav>
+        </header>
         
-    </main>
+        <main class="main">
+
+            <section class="sections">
+
+                <!-- Here will we put the main content with JS -->
+
+            </section>
+
+            <!-- Add one more section  -->
+            <h3 class="sections__add-btn-header">Add one more section</h3>
+            <button class="btn sections__add-btn">+</button>    
+            
+        </main>
+        
+        <footer class="footer">
+            <!-- <a href="https://www.earthorganization.org/europe/" target="_blank">See the data here</a> <br>
+            <a href="https://codepen.io/chriscoyier/pen/gvFGI" target="_blank">Text overflow Codepen</a> -->
+             <br>
+            <!-- Dark/Light theme -->
+            <div class="theming-btns">
+                <button class="theming-btn btn theming-btn--light" id="light-button">Light mode</button>
+                <button class="theming-btn btn theming-btn--dark" id="dark-button">Dark mode</button>
+            </div>
+            <p class="footer__text">Site made by Áron Berényi</p>
+        </footer>
+
+    </div>
     
-    <footer class="footer">
-        <a href="https://www.earthorganization.org/europe/" target="_blank">See the data here</a> <br>
-        <a href="https://codepen.io/chriscoyier/pen/gvFGI" target="_blank">Text overflow Codepen</a>
-        Footer <br>
-        <div class="theming-btns">
-            <button class="theming-btn theming-btn--light" id="light-button">Light mode</button>
-            <button class="theming-btn theming-btn--dark" id="dark-button">Dark mode</button>
-        </div>
-    </footer>
 </body>
 
 <script src="./js/data.js"></script>

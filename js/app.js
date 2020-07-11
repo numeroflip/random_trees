@@ -1,20 +1,31 @@
+
+
+
+
+
+// Global variables
+
 const html = document.querySelector('html');
-
-
 const lightBtn = document.querySelector('#light-button');
 const darkBtn = document.querySelector('#dark-button');
 const themeBtns = document.querySelector('.theming-btns');
 const addBtn = document.querySelector('.sections__add-btn');
 const navList = document.querySelector('.nav__list');
+const currNavElements = [];
+const articles = []
 
-const contLength = 200;
 
+// We follow which articles are shown already, and what is left in the postsData Array. This way we won't have duplicates.
 let remainingArticles = [...postsData]
 while (remainingArticles.length < postsData.length) {
 remainingArticles.push(remainingArticles.length)
 };
-/* ------------------------------FUNCTIONS--------------------------- */
-/* Nav items */
+
+// ------------------------------------------------------------
+// ----------------------------FUNCTIONS-----------------------
+// ------------------------------------------------------------
+
+// Helper function: inserts a navigation element into the header
 function insertNav(element) {
     const navHtml = ` 
         <li class="nav__list-item">
@@ -24,23 +35,16 @@ function insertNav(element) {
     navList.insertAdjacentHTML('beforeend', navHtml);
 
 }
-/* Add a post to the main page from the predefined data array: postsData*/
+// Helper function: Adds a post to the DOM, given a "num". It selects and brings the data from the postsData array, and makes it visible.
 function addPost (num) {
     const data = remainingArticles[num];
     let paragraphs = data.content;
-    /* Trunc. 1st paragraph if longer than given length */
-    let truncatedPar = "";
+    const truncatedPar = data.truncatedContent;
 
-    if (paragraphs[0].length > 200) {
-            truncatedPar = paragraphs[0].slice(0,200) + "...";
-        } else {
-            truncatedPar = paragraphs[0] + "..."
-        }
-    
-        console.log("TRUNCATED: " + truncatedPar);
-        console.log("NORMAL: " + paragraphs[0]);
-    
-    paragraphs = paragraphs.join('</p><p class="article__content" >');
+        
+    paragraphs = paragraphs.join('</p>\n<p class="article__content" >');
+    // Puts the whole content into the DOM,
+    // We have a "truncatedPar" too, because the other paragraphs are hidden by default, the user can open, and close it later.
     const postHtml = `
         <article data-post-id=${data.id} id="article-${data.id}" data-is-closed="true" class="article">
             <figure class="article__figure">
@@ -48,9 +52,9 @@ function addPost (num) {
             </figure>
             <div class="article__text-wrapper">
                 <h2 class="article__title">${data.title}</h2>
-                <p class="article__sci-name">${data.sciName}</p>
-                <p class="article__content--truncated>${truncatedPar}</p>
-                <p class="article__content >${paragraphs}</p>
+                <p class="article__sci-name">${data.sciName}</p> 
+                <p class="article__content--truncated">${truncatedPar}</p>
+                <p class="article__content">${paragraphs}</p>
                 <button class="btn article__more-btn article__more--open">Read More</button>
             </div>
         </article>
@@ -58,22 +62,67 @@ function addPost (num) {
     document.querySelector('.sections').insertAdjacentHTML('beforeend', postHtml);
     /* remove the inserted elements, from the array. -> no duplicates */
     remainingArticles.splice(num, 1);
+
     insertNav(data);
+    currNavElements.push(data);
+    console.log(currNavElements);
 };
-/* Add a random post to the main page */
+
+// Add a random post to the DOM, from the remaining articles.
 function addRanPost() {
     const ranNum = (Math.floor(Math.random() * remainingArticles.length));
     addPost(ranNum);
 };
 
-/* Add 4 random posts to the main page */
+// Main function: add 4 random articles to the page. This is how we start the homepage.
 function init() {
     for (let i = 0; i < 4; i++) {
         addRanPost()
+        handleFocus()
     };
 };
 
 
+// ----------------------------------------
+// -----------HANDLE VISIBILITY------------
+// ----------------------------------------
+
+// This is from stackoverflow (https://stackoverflow.com/questions/487073/how-to-check-if-element-is-visible-after-scrolling)
+function isScrolledIntoView(el) {
+    const rect = el.getBoundingClientRect();
+    const elemTop = rect.top;
+    const elemBottom = rect.bottom;
+
+    // Only completely visible elements return true:
+    let isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    // Partially visible elements return true:
+    //let isVisible = elemTop < window.innerHeight && elemBottom >= 40;
+    return isVisible;
+}
+
+// handler function
+function handleFocus() {
+    const articles = Array.from(document.querySelectorAll('.article'));
+    const currFocusArticle = document.querySelector('.sections .focus');
+    const currFocusLink = document.querySelector('.header .focus')
+    articles.forEach(article => {
+        if (isScrolledIntoView(article)) {
+            if (currFocusArticle !== article && currFocusArticle) {
+                currFocusArticle.classList.remove('focus');
+                currFocusLink.classList.remove('focus');
+            }
+
+            if (!article.classList.contains('focus')) {
+                article.classList.add('focus');
+                console.log(article);
+                document.querySelector(`a[href="#${article.id}"]`).classList.add('focus');
+            };
+        };
+    });
+};
+
+// run on scroll events 
+document.addEventListener('scroll', handleFocus)
 
 
 /* --------------------------EVENT LISTENERS------------------------ */
@@ -84,7 +133,6 @@ document.querySelector('.sections').addEventListener('click', (e) => {
         const article = button.closest('.article');
         const content = document.querySelector(`#article-${article.dataset.postId} .article__content` )
         const dataId = article.dataset.postId
-        console.log(content);
 
         if(article.dataset.isClosed == "true") {
             button.textContent = "Close";

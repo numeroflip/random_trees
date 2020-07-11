@@ -1,40 +1,56 @@
 body {
-  margin-top: 3rem;
   min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  max-width: 1140px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .header {
+  margin: 0 auto;
   position: fixed;
-  background-color: #fff;
-  width: 100vw;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+.nav {
+  margin: 1rem 0;
 }
 
 .main {
-  max-width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  margin-top: 10rem;
+}
+
+main {
+  margin-top: 5rem;
 }
 
 /* LIGHT MODE */
 html[data-theme=light] {
+  --main-color: rgb(244, 247, 243);
   --main-bg-color: rgb(244, 247, 243);
   --focus-bg-color: rgb(255, 255, 255);
+  --grey-color: rgb(56, 56, 56);
   --font-gen-color: rgb(14, 14, 14);
   --font-header-color: rgb(0, 88, 15);
   --img-border: none;
   --primary-color: rgb(0, 145, 24);
-  --negative-color: white;
+  --negative-color: rgb(37, 37, 37);
 }
 
 /* DARK MODE */
 html[data-theme=dark] {
+  --main-color: rgb(32, 32, 32);
   --main-bg-color: rgb(32, 32, 32);
+  --grey-color: rgb(102, 102, 102);
   --focus-bg-color: rgb(59, 59, 59);
   --font-gen-color: rgb(214, 214, 214);
-  --font-header-color: rgb(0, 179, 30);
+  --font-header-color: rgb(82, 209, 103);
   --img-border: 1px solid white;
-  --primary-color: rgb(0, 88, 15);
+  --primary-color: rgb(82, 209, 103);
   --negative-color: white;
 }
 
@@ -80,7 +96,6 @@ html {
 
 body {
   font-family: var(--font-text);
-  margin: 0 1rem;
   color: var(--font-gen-color);
   line-height: 1.6rem;
 }
@@ -108,7 +123,7 @@ h6 {
   border-radius: 10rem;
   background-color: var(--primary-color);
   padding: 0.5rem 1rem;
-  color: var(--negative-color);
+  color: var(--main-color);
   text-align: center;
   transition: all 0.3s;
 }
@@ -124,14 +139,31 @@ h6 {
   background-color: transparent;
 }
 
+.focus {
+  background-color: var(--focus-bg-color);
+  border-radius: 1rem;
+  box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.13);
+}
+
 body {
   background-color: var(--main-bg-color);
 }
 
+.root {
+  margin: 0 1rem;
+}
+
 /* Main Header */
+.header {
+  background-color: var(--main-bg-color);
+  overflow: hidden;
+  box-shadow: 1px 0 20px 1px rgba(68, 68, 68, 0.192);
+}
 .header__logo {
+  margin-top: 1.3rem;
   font-family: var(--font-header);
   font-weight: 800;
+  text-align: center;
 }
 .header .nav {
   min-height: 3rem;
@@ -141,12 +173,17 @@ body {
 }
 .header .nav__list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
 }
 .header .nav__list-item {
-  padding: 0 1rem;
+  margin: 0.2rem 0.2rem;
+}
+.header .nav__list-item a {
+  padding: 0.2rem 1rem;
+  font-weight: 700;
 }
 
 /* A section */
@@ -155,12 +192,14 @@ body {
   margin: 0;
 }
 .sections .article {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
   margin: 1rem 0;
+  margin-bottom: 5rem;
 }
 .sections .article[data-is-closed=true] .article__content {
   display: none;
@@ -206,18 +245,21 @@ body {
   margin-bottom: 1.5rem;
 }
 .sections .article__more-btn {
+  display: block;
+  margin: 0 auto;
+  font-weight: 700;
+}
+.sections__add-btn-header {
   text-align: center;
 }
-.sections__add-btn, .sections__move-top-btn {
+.sections__add-btn {
   height: 3rem;
   width: 3rem;
   font-size: 2rem;
   padding: 0;
-  margin: 0;
-}
-.sections__add-btn {
   margin: 0 auto;
   display: block;
+  margin-bottom: 2rem;
 }
 .sections__add-btn:hover {
   transform: scale(1.1);
@@ -225,6 +267,43 @@ body {
 .sections__add-btn:active {
   transform: scale(2);
   background-color: transparent;
+}
+
+.footer {
+  border-top: 2px solid var(--negative-color);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer__text {
+  color: var(--grey-color);
+  font-weight: 300;
+  font-size: 1rem;
+}
+.footer .theming-btn {
+  font-weight: 800;
+  background: none;
+}
+.footer .theming-btn--light {
+  color: black;
+  background-color: #f4f7f3;
+  border: 2px solid black;
+}
+.footer .theming-btn--dark {
+  color: white;
+  background-color: #252525;
+  border: 2px solid white;
+}
+.footer .theming-btn .btn:active {
+  transform: none;
+  color: red;
+}
+.footer .add-btn-header {
+  border-top: 1px solid black;
+  text-align: center;
+  color: red;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,3 +1,4 @@
+const truncationLength = 200;
 
 class Post {
     constructor(title, sciName, content, imgUrl, id) {
@@ -172,4 +173,13 @@ const post11= new Post (
 
 
 
-const postsData = [post1, post2, post3, post4, post5, post6, post7, post8, post9, post10, post11];
+let postsData = [post1, post2, post3, post4, post5, post6, post7, post8, post9, post10, post11];
+
+//  Making a truncated version of the text, for opening and closing it up later.
+postsData.map( post => {
+    if (post.content[0].length > truncationLength) {
+        post.truncatedContent = post.content[0].slice(0, truncationLength) + ' ...';
+    } else {
+        post.truncatedContent = post.content[0] + '..';
+    }
+})
