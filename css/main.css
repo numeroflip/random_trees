@@ -182,6 +182,7 @@ body {
   margin: 0.2rem 0.2rem;
 }
 .header .nav__list-item a {
+  transition: all 0.3s;
   padding: 0.2rem 1rem;
   font-weight: 700;
 }
@@ -200,6 +201,7 @@ body {
   border-radius: 1rem;
   margin: 1rem 0;
   margin-bottom: 5rem;
+  transition: all 0.3s;
 }
 .sections .article[data-is-closed=true] .article__content {
   display: none;
@@ -295,15 +297,6 @@ body {
   color: white;
   background-color: #252525;
   border: 2px solid white;
-}
-.footer .theming-btn .btn:active {
-  transform: none;
-  color: red;
-}
-.footer .add-btn-header {
-  border-top: 1px solid black;
-  text-align: center;
-  color: red;
 }
 
 /*# sourceMappingURL=main.css.map */

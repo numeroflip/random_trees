@@ -64,8 +64,6 @@ function addPost (num) {
     remainingArticles.splice(num, 1);
 
     insertNav(data);
-    currNavElements.push(data);
-    console.log(currNavElements);
 };
 
 // Add a random post to the DOM, from the remaining articles.
@@ -89,12 +87,13 @@ function init() {
 
 // This is from stackoverflow (https://stackoverflow.com/questions/487073/how-to-check-if-element-is-visible-after-scrolling)
 function isScrolledIntoView(el) {
+    const windowHeight = window.innerHeight;
     const rect = el.getBoundingClientRect();
     const elemTop = rect.top;
     const elemBottom = rect.bottom;
 
     // Only completely visible elements return true:
-    let isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    let isVisible = (((elemTop >= 0) && (elemBottom <= window.innerHeight)) || ((elemTop < 100) && (elemBottom >= windowHeight/2)));
     // Partially visible elements return true:
     //let isVisible = elemTop < window.innerHeight && elemBottom >= 40;
     return isVisible;
@@ -102,9 +101,11 @@ function isScrolledIntoView(el) {
 
 // handler function
 function handleFocus() {
+
     const articles = Array.from(document.querySelectorAll('.article'));
     const currFocusArticle = document.querySelector('.sections .focus');
     const currFocusLink = document.querySelector('.header .focus')
+
     articles.forEach(article => {
         if (isScrolledIntoView(article)) {
             if (currFocusArticle !== article && currFocusArticle) {
@@ -114,7 +115,6 @@ function handleFocus() {
 
             if (!article.classList.contains('focus')) {
                 article.classList.add('focus');
-                console.log(article);
                 document.querySelector(`a[href="#${article.id}"]`).classList.add('focus');
             };
         };

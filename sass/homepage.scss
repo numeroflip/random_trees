@@ -38,6 +38,7 @@ body {
             margin: .2rem .2rem;
 
             a {
+                transition: all .3s;
                 padding: .2rem 1rem;
                 font-weight: 700;
             }
@@ -61,7 +62,9 @@ body {
         border-radius: 1rem;
         margin: 1rem 0;
         margin-bottom: 5rem;
+        transition: all .3s;
 
+        // The opening and closing "logic" of the content. When opened, show with display: block;
         &[data-is-closed="true"] {
 
             & .article__content {
@@ -77,12 +80,12 @@ body {
             & .article__content--truncated {
                 display: none;
             }
-
             & .article__content {
                 display: block;
             }
-        };   
+        }; 
 
+        // The image of the articles
         &__figure {
             width: 100%;
     
@@ -94,7 +97,8 @@ body {
                 border-radius: 1rem;
             }
         }
-    
+
+        //  All the text inside an article
         &__text-wrapper {    
 
                 .article__title {
@@ -122,15 +126,14 @@ body {
                     margin: 0;
                     margin-bottom: 1.5rem;
                 }
-    
         }
-        
+
+// "Add more" button at the end of the section
         &__more-btn {
             display: block;
             margin: 0 auto;
             font-weight: 700;
         }
-        
     }
 
     &__add-btn-header {
@@ -162,7 +165,6 @@ body {
 .footer {
     border-top: 2px solid var(--negative-color);
     padding-top: 2rem;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -174,6 +176,7 @@ body {
         font-size: 1rem;
     };
 
+    // The dark/light theme buttons
     .theming-btn {
         font-weight: 800;
         background: none;
@@ -181,31 +184,15 @@ body {
             color: black;
             background-color: rgb(244, 247, 243);
             border: 2px solid black; 
-
-        }
+        };
 
         &--dark {
             color: white;
             background-color: rgb(37, 37, 37);
             border: 2px solid white;
-        }
+        };
 
-        & .btn:active {
-            transform: none;
-            color: red;
-        }
-
-    }
-
-    .add-btn-header {
-        border-top: 1px solid black;
-        text-align: center;
-        color: red;
-    };
-    
-    
-    
-    
+    };  
 };
 
 
